@@ -44,7 +44,7 @@ function callSongs(e, fullPath) {
 
 async function main(folder) {
 
-  let response = await fetch(`http://192.168.1.9:63852/${folder}/`);
+  let response = await fetch(`https://spotify-clone-copy.netlify.app/${folder}/`);
   let html = await response.text();
   let div = document.createElement("div");
   div.innerHTML = html;
@@ -82,7 +82,7 @@ async function main(folder) {
 
 async function folders()
 {
-  let response = await fetch(`http://192.168.1.9:63852/songs/`);
+  let response = await fetch(`https://spotify-clone-copy.netlify.app/songs/`);
   let html = await response.text();
   let div = document.createElement("div");
   div.innerHTML = html;
@@ -97,7 +97,7 @@ async function folders()
     if(e.href.includes("/songs/"))
     {
       let folder=(e.href.split("/").slice(-2)[1])    
-    let response = await fetch(`http://192.168.1.9:63852/songs/${folder}/info.json`);
+    let response = await fetch(`https://spotify-clone-copy.netlify.app/songs/${folder}/info.json`);
       let html = await response.json();
  
       cardContainer.innerHTML += ` <div data-folder=${folder} class="card ">
